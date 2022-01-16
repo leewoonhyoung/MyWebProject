@@ -122,7 +122,7 @@ class AccountControllerTest {
                 .andExpect(model().attributeExists("nickname"))
                 .andExpect(model().attributeExists("numberOfUser"))
                 .andExpect(view().name("account/checked-email"))
-                .andExpect(authenticated()); // 인증이 된 사용자 인지 아닌지 확인.
+                .andExpect(authenticated().withAuthenticationName("lee")); // 인증이 된 사용자 인지 아닌지 확인.
 
     }
 

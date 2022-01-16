@@ -4,7 +4,7 @@ import com.mywebpj.domain.Account;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.security.authentication.AuthenticationManager;
+//import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
@@ -22,7 +22,7 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final JavaMailSender javaMailSender;
     private final PasswordEncoder passwordEncoder;
-    private final AuthenticationManager authenticationManager;
+//    private final AuthenticationManager authenticationManager;
 
     @Transactional // JPA  persist 상태를 가져와 주는 역할.
     public Account processNewAccount(SignUpForm signUpForm) {
