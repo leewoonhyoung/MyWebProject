@@ -2,7 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
+<head th:replace="fragments.html :: head">
     <meta charset="UTF-8">
     <title>WebProject</title>
     <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -12,10 +12,18 @@
         }
     </style>
 </head>
+
+
 <body class="bg-light">
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div th:replace="fragments.html :: main-nav"></div>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>스터디</h2>
+        </div>
+
+<nav th:fragment="main-nav" class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="/" th:href="@{/}">
-        <img src="/static/images/logo_sm.png" width="30" height="30" alt="">
+        <img src="/static/images/logo_sm.jpg" width="30" height="30" alt="">
     </a>
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggle-icon"></span>
@@ -77,7 +85,11 @@
         </div>
     </footer>
 </div>
-<script src="/static/node_modules/jquery/dist/jquery.min.js"></script>
+
+
+    <div th:replace="fragments.html :: footer"></div>
+
+<script src="/static/node_modules/"></script>
 <script src="/static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script type="application/javascript">
     (function () {
