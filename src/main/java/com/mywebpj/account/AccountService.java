@@ -46,12 +46,12 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
-    private void sendSignUpConfirmEmail(Account newAccount) {
+    public void sendSignUpConfirmEmail(Account newAccount) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(newAccount.getEmail());
-        mailMessage.setSubject("이운형웹, 회원 가입 인증");
+        mailMessage.setSubject("스터디올래, 회원 가입 인증");
         mailMessage.setText("/check-email-token?token=" + newAccount.getEmailCheckToken() +
-                "&email=" + newAccount.getEmail()); //요청을 클
+                "&email=" + newAccount.getEmail());
         javaMailSender.send(mailMessage);
     }
 

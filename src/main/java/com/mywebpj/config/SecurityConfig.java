@@ -20,6 +20,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/email-login", "/check-email-login", "/login-link").permitAll()
                 .mvcMatchers(HttpMethod.GET, "/profile/*").permitAll() // profile 호출은 get에서만 호출이 가능하게 보안설정
                 .anyRequest().authenticated(); //나머지 요청은 로그인 해야 쓸수있다.
+
+        http.formLogin()
+                .loginPage("/login").permitAll();
+
+        http.logout()
+                .logoutSuccessUrl("/");
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
