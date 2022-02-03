@@ -46,6 +46,8 @@ public class Account {
 
     private boolean studyCreatedByWeb;
 
+    private LocalDateTime emailCheckTokenGeneratedAt;
+
     private boolean studyEnrollmentResultByWeb;
 
     private boolean studyUpdatedByEmail;
@@ -63,5 +65,9 @@ public class Account {
 
     public boolean isValidToken(String token) {
         return this.emailCheckToken.equals(token);
+    }
+
+    public boolean canSendConfirmEmail() {
+        return this.emailCheckTokenGeneratedAt.isBefore(LocalDateTime.now().minusHours(1));
     }
 }
