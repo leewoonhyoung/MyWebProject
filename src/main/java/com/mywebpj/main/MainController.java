@@ -18,9 +18,15 @@ public class MainController {
         return "index";
     }
 
+ //TEst code
     @GetMapping("/login")
-    public String login(){
+    public String login(@CurrentUser Account account , Model model){
+        model.addAttribute("submitHelp",);
+        model.addAttribute("username", account.getNickname());
+        model.addAttribute("emailHelp", );
         return "login";
-    }
 
+    }
 }
+
+
